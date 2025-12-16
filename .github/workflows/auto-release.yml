@@ -18,7 +18,7 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          zip -r project-${{ github.sha }}.zip . \
+          zip -r Diana-WP.zip . \
             -x "*.git*" \
             -x ".github/workflows/*"
 
@@ -29,8 +29,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: build-${{ github.sha }}
-          release_name: ${{ github.sha }}
-          body: | 
+          release_name: Build ${{ github.sha }}
+          body: |
             Commit: ${{ github.sha }}
           draft: false
           prerelease: false
