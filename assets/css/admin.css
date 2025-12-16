@@ -1,0 +1,13 @@
+/* Styles for the admin meta box */
+.wcppg-approved-notice {
+    color: #28a745;
+    font-weight: bold;
+    padding: 5px;
+    background: #e9f6eb;
+    border-right: 3px solid #28a745;
+}
+#wcppg_order_details_metabox hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1em 0;
+}

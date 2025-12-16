@@ -1,0 +1,47 @@
+name: Auto Build & Release ZIP
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create ZIP archive
+        run: |
+          zip -r project-${{ github.sha }}.zip . \
+            -x "*.git*" \
+            -x ".github/workflows/*"
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: build-${{ github.sha }}
+          release_name: Auto Build ${{ github.sha }}
+          body: |
+            🔹 Automatic build generated on push  
+            🔹 Commit: ${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload ZIP to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: project-${{ github.sha }}.zip
+          asset_name: project-${{ github.sha }}.zip
+          asset_content_type: application/zip

@@ -1,0 +1,61 @@
+/* Checkout Page Styles */
+.wcppg-checkout-section {
+    margin-bottom: 2em;
+}
+.wcppg-checkout-section h3 {
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    font-size:20px;
+    padding-bottom: 0.5em;
+}
+.wcppg-checkout-section .wcppg-options-list .wcppg-option {
+    background:white;
+    padding:.6rem 1rem
+}
+.wcppg-options-list .wcppg-option {
+    display: block;
+    margin-bottom: 0.8em;
+}
+.wcppg-options-list label {
+    display: inline-block;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+body.rtl .wcppg-options-list label {
+    margin-right: 0;
+    margin-left: 0.5em;
+}
+.wcppg-options-list input[type="radio"] {
+    margin: -2px 0.5em 0 0;
+    vertical-align: middle;
+}
+body.rtl .wcppg-options-list input[type="radio"] {
+    margin: -2px 0 0 0.5em;
+}
+.wcppg-payment-title {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+/* My Account Page Styles */
+.wcppg-myaccount-details {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e0e0e0;
+}
+.wcppg-remaining-amount {
+    color: #c92c2c;
+    font-weight: bold;
+}
+.wcppg-status-approved {
+    color: #28a745;
+    font-weight: bold;
+}
+.wcppg-status-pending {
+    color: #fd7e14;
+    font-weight: bold;
+}
+
+.woocommerce-privacy-policy-text {
+    
+}
